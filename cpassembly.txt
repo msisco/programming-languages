@@ -1,0 +1,28 @@
+This java compiler does not have constant propogation because it first sets the value of x to 4 (line 0,1), loads it into a register(2), loads the constant value 2(3) and then adds them together(4), stores it in line 5. It does not replace y with the value 6, instead forces the add.
+
+
+
+Compiled from "ConstantPropogation.java"
+public class ConstantPropogation {
+  public ConstantPropogation();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: iconst_4
+       1: istore_1
+       2: iload_1
+       3: iconst_2
+       4: iadd
+       5: istore_2
+       6: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       9: iload_1
+      10: invokevirtual #3                  // Method java/io/PrintStream.println:(I)V
+      13: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      16: iload_2
+      17: invokevirtual #3                  // Method java/io/PrintStream.println:(I)V
+      20: return
+}

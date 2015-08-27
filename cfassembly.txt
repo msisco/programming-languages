@@ -1,0 +1,23 @@
+This java compiler has constant folding since we can see on line 0 it has bipush with the value of 7 instead of 3 +4.
+
+
+
+
+
+sub Compiled from "ConstantFolding.java"
+public class ConstantFolding {
+  public ConstantFolding();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: bipush        7
+       2: istore_1
+       3: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       6: iload_1
+       7: invokevirtual #3                  // Method java/io/PrintStream.println:(I)V
+      10: return
+}
